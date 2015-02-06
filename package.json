@@ -1,6 +1,6 @@
 {
   "name": "react-purify",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Make your React methods pure",
   "main": "index.js",
   "author": "Alexey Raspopov (https://github.com/alexeyraspopov)",
