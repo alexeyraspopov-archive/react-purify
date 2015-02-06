@@ -1,0 +1,14 @@
+{
+  "name": "react-purify",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexey Raspopov <avenger7x13@gmail.com> (https://github.com/alexeyraspopov)",
+  "license": "MIT",
+  "dependencies": {
+    "fn-args": "^1.0.0"
+  }
+}
