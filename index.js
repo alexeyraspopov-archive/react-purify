@@ -1,7 +1,13 @@
 var fnArgs = require('fn-args');
 
-exports.render = function(fn){
-	var args = fnArgs(fn).map(function(name){ return 'this.' + name; });
+function argsInContext(fn){
+	return fnArgs(fn).map(function(name){ return 'this.' + name; });
+}
 
-	return new Function('fn', 'return function(a, b, c){ fn(' + args + ', a, b, c); }')(fn)
+exports.render = function(fn){
+	return new Function('fn', 'return function(a, b, c){ fn(' + argsInContext(fn) + ', a, b, c); }')(fn);
+};
+
+exports.state = function(fn){
+	return new Function('fn', 'return function(a, b, c){ var state = fn(' + argsInContext(fn) + ', a, b, c); state && this.setState(state) }')(fn);
 };
