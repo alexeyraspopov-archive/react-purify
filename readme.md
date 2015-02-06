@@ -16,7 +16,7 @@ Make your React methods pure.
 		});
 	});
 
-You allways get `props` and `state`.
+Your methods receive `props` and `state` before other arguments.
 
 	var Counter = React.createClass({
 
