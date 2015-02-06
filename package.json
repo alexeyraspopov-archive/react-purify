@@ -5,8 +5,5 @@
   "main": "index.js",
   "author": "Alexey Raspopov (https://github.com/alexeyraspopov)",
   "repository": "alexeyraspopov/react-purify",
-  "license": "MIT",
-  "dependencies": {
-    "fn-args": "^1.0.0"
-  }
+  "license": "MIT"
 }
