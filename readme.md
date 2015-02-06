@@ -16,7 +16,7 @@ Make your React methods pure.
 		});
 	});
 
-You can pass everything you want to get from `this`
+You allways get `props` and `state`.
 
 	var Counter = React.createClass({
 
@@ -24,15 +24,22 @@ You can pass everything you want to get from `this`
 			return { counter: 0 };
 		},
 
-		tick: rp(function(state){
-			this.setState({ counter: state.counter + 1; })
+		tick: rp(function(_, state, event){
+			// if your method receives other arguments they will be received after `state`
+			this.setState({ counter: state.counter + 1; });
 		}),
 
 		render: rp(function(props, state){
-			return <p>{ props.label }: { state.counter }</p>;
+			return <p onClick={ this.tick }>{ props.label }: { state.counter }</p>;
 		})
 	});
 
-## TODO
+Also you can update component state easily. Just return new state.
 
- * Use methods result as a new state.
+	tick: rp(function(_, state){
+		return { counter: state.counter + 1; };
+	})
+
+## License
+
+MIT License
